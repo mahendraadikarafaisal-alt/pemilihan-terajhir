@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEMILIHAN KETUA & WAKIL KETUA OSIS TAHUN 2026/2027</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="-removebg-preview.png" alt="Logo Sekolah" class="logo-sekolah">
+        <div style="display: flex; flex-direction: column; align-items: center; flex: 1;">
+            <h1 style="margin: 0;">PEMILIHAN KETUA & WAKIL KETUA OSIS 2026/2027</h1>
+            <p style="margin: 0;">Pilih calon ketua OSIS terbaik untuk masa depan sekolah kita!</p>
+        </div>
+        <img src="file.png" alt="Logo OSIS" class="logo-osis">
+    </header>
+    <div id="login-screen" class="login-screen">
+        <div class="login-container">
+            <h2>Login Siswa</h2>
+            <form id="loginForm">
+                <label for="studentPassword">Password:</label>
+                <input type="password" id="studentPassword" required>
+                <button type="submit">Login</button>
+            </form>
+            <div id="loginError" class="error-message"></div>
+        </div>
+    </div>
+
+    <div id="main-content" style="display: none;">
+    <div class="container">
+        <div class="candidate-card" onclick="openModal(1)">
+            <div style="font-size: 1.5em; font-weight: bold; color: #000000; margin-bottom: 10px;">1</div>
+            <img src="ANIES.png" alt="Calon 1" class="candidate-photo" onerror="this.src='https://via.placeholder.com/150?text=Calon+1'">
+            <h4 class="candidate-name">Ketua: Anies Baswedan<br>Wakil: Muahmin Iskandar</h2>
+            <p>Klik untuk melihat visi dan misi</p>
+        </div>
+
+        <div class="candidate-card" onclick="openModal(2)">
+            <div style="font-size: 1.5em; font-weight: bold; color: #000000; margin-bottom: 10px;"> 2</div>
+            <img src="PRABOWO.png" alt="Calon 2" class="candidate-photo" onerror="this.src='https://via.placeholder.com/150?text=Calon+2'">
+            <h2 class="candidate-name">Ketua: Prabowo Subianto<br>Wakil: Gibran Rakabuming Raka</h2>
+            <p>Klik untuk melihat visi dan misi</p>
+        </div>
+
+        <div class="candidate-card" onclick="openModal(3)">
+            <div style="font-size: 1.5em; font-weight: bold; color: #000000; margin-bottom: 10px;">3</div>
+            <img src="GANJAR.png" alt="Calon 3" class="candidate-photo" onerror="this.src='https://via.placeholder.com/150?text=Calon+3'">
+            <h2 class="candidate-name">Ketua: Ganjar<br>Wakil: Teuapal</h2>
+            <p>Klik untuk melihat visi dan misi</p>
+        </div>
+
+        <div class="candidate-card" onclick="openModal(4)">
+            <div style="font-size: 1.5em; font-weight: bold; color: #000000; margin-bottom: 10px;"> 4</div>
+            <img src="MAS NAZRIEL.png" alt="Calon 4" class="candidate-photo" onerror="this.src='https://via.placeholder.com/150?text=Calon+4'">
+            <h2 class="candidate-name">Ketua: Mas Nazriel Ganteng<br>Wakil: Istrinya Anime</h2>
+            <p>Klik untuk melihat visi dan misi</p>
+        </div>
+    </div>
+
+    <div id="animation-screen" class="animation-screen" style="display:none; position: fixed; top:0; left:0; width:100%; height:100%; background-image: url('sekolah.png'); background-size: cover; background-position: center; z-index: 3000; justify-content: center; align-items: center; flex-direction: row; color: white;">
+        <img src="file.png" alt="Logo OSIS" style="width: 150px; animation: fadeIn 2s ease-in-out infinite alternate;">
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modal-photo" src="" alt="Calon" class="candidate-photo" style="display: block; margin: 0 auto 20px;">
+            <h2 id="modal-name"></h2>
+            <div class="vision-misi">
+                <h3>Visi</h3>
+                <p id="modal-visi"></p>
+                <h3>Misi</h3>
+                <p id="modal-misi"></p>
+            </div>
+            <button id="vote-btn" class="vote-btn" onclick="vote()">Vote</button>
+            <div id="thanks" class="thanks-message">
+                Terima kasih atas partisipasi Anda! Suara Anda telah dicatat.
+            </div>
+        </div>
+    </div>
+
+        <div id="thanks-screen" class="thanks-screen">
+            <img src="file.png" alt="Logo OSIS" style="width: 200px; height: auto; margin: 20px 0;">
+            <div id="successMessage" style="font-size: 18px; color: white; text-shadow: 1px 1px 2px #000;"></div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

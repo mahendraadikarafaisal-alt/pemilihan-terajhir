@@ -1,0 +1,262 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('sekolah.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+.login-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+.login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+.login-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+.login-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+.login-container input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+.login-container button {
+    padding: 12px;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.login-container button:hover {
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: bold;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+.logo-sekolah {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+.logo-osis {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    flex: 1;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.candidate-card {
+    background: rgb(253, 252, 255);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.candidate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+.candidate-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 0;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 4px solid #000000;
+}
+.candidate-name {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #000000;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 0.3s ease;
+}
+.modal-content {
+    background: rgb(255, 255, 255);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+}
+.close:hover {
+    color: #000;
+}
+.vision-misi {
+    text-align: left;
+    margin: 20px 0;
+}
+.vision-misi h3 {
+    color: #000000;
+    border-bottom: 2px solid #000000;
+    color:#000000;
+    padding-bottom: 5px;
+}
+.vote-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.1em;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+.vote-btn:hover:not(:disabled) {
+    background: #218838;
+}
+.vote-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+.thanks-message {
+    display: none;
+    background: #d4edda;
+    color: #155724;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.thanks-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('sekolah.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+    animation: fadeIn 0.5s ease;
+}
+.thanks-screen h1 {
+    font-size: 3em;
+    margin-bottom: 0;
+}
+.countdown {
+    font-size: 2em;
+    margin-top: 0;
+}
+.animation-screen {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('sekolah.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 3000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+}
+.animation-screen img {
+    width: 150px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
